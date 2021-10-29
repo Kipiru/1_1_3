@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    public void saveUser(String name, String lastName, byte age) {
+    public void saveUser(String name, String lastName, Byte age) {
         User user = new User(name, lastName, age);
         String INSERT_USER = "INSERT INTO schema1_1_3.users(name, lastName, age) VALUES (?, ?, ?)";
         try (Connection connection = Util.getConnection();
