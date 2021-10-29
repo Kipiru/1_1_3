@@ -16,13 +16,20 @@ public class User {
     private String lastName;
 
     @Column
-    private Byte age;
+    private byte age;
 
     public User() {
 
     }
 
-    public User(String name, String lastName, Byte age) {
+    public User(String name, String lastName, byte age) {
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    public User(Long id, String name, String lastName, byte age) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -52,11 +59,21 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Byte getAge() {
+    public byte getAge() {
         return age;
     }
 
-    public void setAge(Byte age) {
+    public void setAge(byte age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
