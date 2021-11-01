@@ -12,6 +12,7 @@ public class Util {
         String dbPassword = "root";
         try {
             connection = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
+            connection.setAutoCommit(false);
         } catch (SQLException e) {
             e.printStackTrace();
         }
